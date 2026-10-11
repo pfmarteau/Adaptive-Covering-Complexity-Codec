@@ -1,4 +1,3 @@
-# Adaptive-Covering-Complexity-Codec
 
 # Adaptive Covering Complexity ($C_S^{\text{adapt}}$)
 
