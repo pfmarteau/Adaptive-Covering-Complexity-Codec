@@ -22,15 +22,12 @@ Compressing collections of short, highly repetitive records (e.g., microservice 
 If you use this work in your research, please cite our paper:
 
 ```bibtex
-@unpublished{marteau:hal-05801771,
-  TITLE = {{On the Adaptive Covering Complexity of Strings: Unifying Relative and Self-Referential Compression}},
-  AUTHOR = {Marteau, Pierre-Fran{\c c}ois},
-  URL = {https://hal.science/hal-05801771},
-  NOTE = {working paper or preprint},
-  YEAR = {2026},
-  MONTH = Oct,
-  KEYWORDS = {Adaptive covering complexity Lempel-Ziv parsing relative dictionary compression suffix automata string matching entropy minimum description length (MDL) ; Adaptive covering complexity ; Lempel-Ziv parsing ; relative dictionary compression ; suffix automata ; string matching ; entropy ; minimum description length (MDL)},
-  PDF = {https://hal.science/hal-05801771v1/file/adaptive_covering_v15_TIT_consolidated.pdf},
-  HAL_ID = {hal-05801771},
-  HAL_VERSION = {v1},
+@misc{marteau2026adaptivecoveringcomplexitystrings,
+      title={On the Adaptive Covering Complexity of Strings: Unifying Relative and Self-Referential Compression}, 
+      author={Pierre-Fran{\c c}ois Marteau},
+      year={2026},
+      eprint={2610.26021},
+      archivePrefix={arXiv},
+      primaryClass={cs.IT},
+      url={https://arxiv.org/abs/2610.26021}, 
 }
