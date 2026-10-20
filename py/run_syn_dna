@@ -1,0 +1,6 @@
+#!/bin/sh
+python3 bench_codec.py --gen-module corpora.py --gen-kind genomic --name synthetic_dna \
+  --ntrain 200 --nval 100 --ntest 1000 --seeds 3 --budgets 512,2048,8192,32768 --scenarios A,B,C,S,T \
+  --codec cs_adapt_codec.py --mdl mdl.py --mdl-prune exact,lazy \
+  --nsweep --out bench_out
+
