@@ -1,0 +1,30 @@
+% bench-meta: corpus=genomic_1000_files charge=raw n_test=770 avg_len=200.0 seeds=5 ntrain=200 codec=cs_adapt_codec.py floor_bits= gen_reps= gen_motifs=
+\begin{table}[h]\centering\footnotesize\caption{Scenario A}\begin{tabular}{lrrrrrrrr}\toprule
+Method & payload & index & dict.(raw) & dict.(comp) & total (B) & ratio (\%) & codec gain (\%) & gain std \\\midrule
+brotli11~primed+sampled & 29518 & 771 & 11440 & 4231 & 41729 & 27.10 & -73.66 & 48.68 \\
+brotli11~primed+S & 41057 & 771 & 6351 & 2760 & 48178 & 31.28 & -42.21 & 11.53 \\
+ctxmodel-o2(ideal) & 43575 & 771 & 9640 & 6569 & 53986 & 35.06 & -25.98 & 0.81 \\
+ppmd8~primed+sampled & 48258 & 771 & 5720 & 2288 & 54749 & 35.55 & -24.24 & 1.30 \\
+ppmd8~primed+S & 47819 & 771 & 6351 & 2760 & 54940 & 35.68 & -23.80 & 0.50 \\
+ctxmodel-o1(ideal) & 51860 & 771 & 2511 & 1957 & 55142 & 35.81 & -23.34 & 0.74 \\
+ctxmodel-o3(ideal) & 40948 & 771 & 18640 & 12063 & 60359 & 39.19 & -12.68 & 0.82 \\
+codec-cross[S=zstd-trained] & 55044 & 771 & 7425 & 3614 & 63240 & 41.06 & -7.55 & 0.65 \\
+lzma~primed+sampled & 57179 & 771 & 6600 & 2612 & 64550 & 41.92 & -5.38 & 1.20 \\
+lzma~primed+S & 57759 & 771 & 6351 & 2760 & 64881 & 42.13 & -4.85 & 1.48 \\
+codec-ablation[RLZ: no self-ref.] & 55082 & 771 & 9282 & 5024 & 65135 & 42.30 & -4.43 & 1.29 \\
+CODEC[S=MDL m=-1] & 57793 & 771 & 9449 & 5138 & 68013 & 44.16 & -- & -- \\
+zstd19-min+ztrained & 65901 & 771 & 6702 & 2881 & 73374 & 47.65 & +7.30 & 0.65 \\
+zlib9-raw+S & 66997 & 771 & 6351 & 2760 & 74119 & 48.13 & +8.24 & 0.37 \\
+zlib9-raw+ztrained & 65521 & 771 & 7906 & 3370 & 74198 & 48.18 & +8.33 & 0.84 \\
+CODEC[S=MDL m=1] & 57993 & 771 & 15842 & 8125 & 74606 & 48.45 & +8.84 & 0.53 \\
+zlib9-raw+sampled & 66812 & 771 & 7360 & 2883 & 74943 & 48.66 & +9.24 & 0.96 \\
+codec-ablation[S=∅: pure LZ77] & 81388 & 776 & 473 & 385 & 82637 & 53.66 & +17.70 & 0.48 \\
+zstd19-min+sampled & 77847 & 775 & 7360 & 2883 & 85982 & 55.83 & +20.89 & 0.93 \\
+zstd19-min+S & 79477 & 778 & 6351 & 2760 & 86606 & 56.24 & +21.47 & 0.37 \\
+brotli11 & 102553 & 1320 & 0 & 0 & 103873 & 67.45 & +34.52 & 0.42 \\
+zlib9-raw & 108724 & 1526 & 0 & 0 & 110249 & 71.59 & +38.31 & 0.38 \\
+zstd19-min & 109157 & 1488 & 0 & 0 & 110645 & 71.85 & +38.53 & 0.36 \\
+zlib6-framed & 113344 & 1538 & 0 & 0 & 114883 & 74.60 & +40.80 & 0.37 \\
+lzma-raw & 114049 & 1534 & 0 & 0 & 115583 & 75.05 & +41.16 & 0.37 \\
+bzip2 & 132247 & 1539 & 0 & 0 & 133787 & 86.87 & +49.16 & 0.30 \\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,30 @@
+% bench-meta: corpus=synthetic_dna charge=raw n_test=979 avg_len=287.6 seeds=3 ntrain=200 codec=cs_adapt_codec.py floor_bits=13.136 gen_reps= gen_motifs=
+\begin{table}[h]\centering\footnotesize\caption{Scenario A}\begin{tabular}{lrrrrrrrr}\toprule
+Method & payload & index & dict.(raw) & dict.(comp) & total (B) & ratio (\%) & codec gain (\%) & gain std \\\midrule
+brotli11~primed+sampled & 6030 & 979 & 958 & 61 & 7966 & 2.83 & -37.46 & 13.61 \\
+brotli11~primed+S & 6883 & 979 & 683 & 88 & 8544 & 3.03 & -32.15 & 25.31 \\
+zlib9-raw+S & 9152 & 979 & 683 & 88 & 10814 & 3.84 & -0.36 & 1.95 \\
+CODEC[S=MDL m=-1] & 8964 & 979 & 904 & 288 & 10847 & 3.85 & -- & -- \\
+zlib9-raw+ztrained & 9230 & 979 & 668 & 196 & 10877 & 3.86 & +0.28 & 0.48 \\
+CODEC[S=MDL m=1] & 8697 & 979 & 1628 & 354 & 11304 & 4.01 & +4.03 & 0.68 \\
+codec-cross[S=zstd-trained] & 9727 & 979 & 916 & 441 & 11623 & 4.13 & +6.68 & 0.64 \\
+zlib9-raw+sampled & 10244 & 979 & 677 & 55 & 11901 & 4.23 & +8.84 & 1.30 \\
+ppmd8~primed+sampled & 10124 & 979 & 1338 & 70 & 12442 & 4.42 & +12.79 & 2.28 \\
+ppmd8~primed+S & 10933 & 979 & 683 & 88 & 12595 & 4.48 & +13.82 & 2.76 \\
+lzma~primed+S & 16516 & 979 & 683 & 88 & 18177 & 6.46 & +40.33 & 0.69 \\
+lzma~primed+sampled & 17937 & 979 & 357 & 47 & 19273 & 6.85 & +43.72 & 0.60 \\
+zstd19-min+ztrained & 17945 & 979 & 830 & 203 & 19754 & 7.02 & +45.09 & 0.24 \\
+zstd19-min+S & 18509 & 979 & 683 & 88 & 20171 & 7.16 & +46.21 & 0.76 \\
+zstd19-min+sampled & 19402 & 979 & 357 & 47 & 20738 & 7.37 & +47.70 & 0.75 \\
+codec-ablation[S=∅: pure LZ77] & 22155 & 979 & 129 & 132 & 23263 & 8.26 & +53.36 & 1.07 \\
+brotli11 & 31149 & 979 & 0 & 0 & 32128 & 11.41 & +66.24 & 0.40 \\
+zstd19-min & 35472 & 979 & 0 & 0 & 36451 & 12.95 & +70.24 & 0.29 \\
+zlib9-raw & 40813 & 979 & 0 & 0 & 41792 & 14.85 & +74.05 & 0.23 \\
+zlib6-framed & 46687 & 979 & 0 & 0 & 47666 & 16.93 & +77.25 & 0.20 \\
+lzma-raw & 47730 & 979 & 0 & 0 & 48709 & 17.30 & +77.73 & 0.20 \\
+codec-ablation[RLZ: no self-ref.] & 58391 & 1068 & 896 & 302 & 60355 & 21.43 & +82.01 & 0.41 \\
+bzip2 & 66514 & 979 & 0 & 0 & 67493 & 23.98 & +83.93 & 0.14 \\
+ctxmodel-o3(ideal) & 68349 & 1092 & 1274 & 913 & 70715 & 25.10 & +84.65 & 0.39 \\
+ctxmodel-o1(ideal) & 70239 & 1062 & 81 & 81 & 71383 & 25.35 & +84.80 & 0.21 \\
+ctxmodel-o2(ideal) & 70208 & 1070 & 349 & 308 & 71627 & 25.44 & +84.85 & 0.18 \\
+\bottomrule\end{tabular}\end{table}
