@@ -1,5 +1,5 @@
 #!/bin/sh
-python bench_codec.py --corpus ./data/genomic_1000_files/ --format fasta --crop 200 --group-regex 'ENSG\d+' \
+python bench_codec.py --corpus ../data/genomic_1000_files/ --format fasta --crop 200 --group-regex 'ENSG\d+' \
   --ntrain 200 --nval 100 --ntest 1000 --seeds 5 --dict-charge raw \
   --budgets 512,2048,8192,32768 --scenarios A,B,C,S,T --nsweep \
   --codec cs_adapt_codec.py --mdl mdl.py --mdl-prune exact,lazy
